@@ -1,0 +1,50 @@
+{
+    "name": "run-chat-gpt",
+    "version": "0.1.0",
+    "description": "runChatGPT repo",
+    "repository": "git@github.com:MaheeHossain/RunChatGPT.git",
+    "author": "Mahee Hossain <maheehossain334@gmail.com>",
+    "private": true,
+    "scripts": {
+      "commit": "npx git-cz",
+      "commit-components": "yarn workspace run-chat-gpt/components commit",
+      "commit-cli": "yarn workspace run-chat-gpt/cli commit",
+      "commit-core": "yarn workspace run-chat-gpt/core commit",
+      "commit-frontend": "yarn workspace frontend commit",
+      "commit-server": "yarn workspace server commit",
+      "start": "yarn workspace frontend start",
+      "local": "NODE_OPTIONS=--openssl-legacy-provider yarn workspace frontend start",
+      "build": "yarn workspace frontend build",
+      "test": "yarn workspace frontend test",
+      "deploy": "yarn workspace server start",
+      "update": "yarn upgrade-interactive --latest"
+    },
+    "devDependencies": {
+      "@commitlint/cli": "~19.7.1",
+      "@commitlint/config-conventional": "^19.7.1",
+      "@commitlint/core": "~19.7.1",
+      "@commitlint/prompt": "^19.7.1",
+      "commitizen": "~4.3.1",
+      "commitlint-config-cz": "^0.13.3",
+      "cross-env": "~7.0.3",
+      "cz-conventional-changelog": "^3.3.0",
+      "dateformat": "~5.0.3",
+      "husky": "~9.1.7"
+    },
+    "husky": {
+      "hooks": {
+        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      }
+    },
+    "config": {
+      "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+      }
+    },
+    "workspaces": {
+        "packages": [
+            "frontend",
+            "server"
+        ]
+    }
+  }
