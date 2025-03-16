@@ -1,15 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Heading } from 'src/components/Heading';
 import './App.css';
+import { Logo } from 'src/components/Logo';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Run Chat GPT App
-        </p>
+        <Logo altText='alt'/>
+        <Heading headingText='heading'/>
         <a
           className="App-link"
           href="https://reactjs.org"
